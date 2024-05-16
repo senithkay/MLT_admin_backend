@@ -1,0 +1,93 @@
+
+
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>{{info.title}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 50px;
+            margin: 0 auto;
+        }
+        th, td {
+        border-left: none ;
+        border-right: none ;
+
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+
+        }
+        th {
+            background-color: #fff3e3;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        h1{
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+        }
+
+        .headerContainer{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        
+
+        .textContainer{
+
+        }
+
+        .bodyTR{
+            background-color: #fff9f0;
+        }
+
+        .bodyTR td{
+            border-bottom: 0.2px solid rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .date-td {
+            text-align: left;
+        }
+    </style>
+<body>
+    <div class="headerContainer">
+        <img src="data:image/png;base64,${logoBase64}" alt="Logo" />
+    </div>
+    <table>
+        <tr>
+            <th>Product name</th>
+            <th>Opening Stock Qty</th>
+            <th>Sold Stock Qty</th>
+            <th>Balance Qty</th>
+            <th>Date</th>
+            <th>Price Per Unit</th>
+            <th>Total sales</th>
+        </tr>
+        {{#each stocks as |stock|}}
+            <tr class="bodyTR">
+                <td>{{stock.productName}}</td>
+                <td>{{stock.openingStock}}</td>
+                <td>{{stock.soldStock}}</td>
+                <td>{{stock.balanceStock}}</td>
+                <td class="date-td">{{stock.date}}</td>
+                <td>{{stock.pricePerUnit}}</td>
+                <td>{{stock.totalSales}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</body>
+</html>
